@@ -13,12 +13,15 @@ import TodaySchedule from "../_components/TodaySchedule";
 import Card, { CardBody, CardHeader } from "../_components/Card";
 import Badge from "../_components/Badge";
 import Button from "../_components/Button";
+import AuthorMeta from "../_components/AuthorMeta";
 import { apiGet, baseUrl, type ApiError } from "@/app/lib/api";
 import type { ReportItem, InvoiceItem, ScheduleItem } from "../../../lib/types";
 import { useAlerts } from "@/app/lib/alerts-context";
+import { useAuth } from "@/app/lib/auth-context";
 
 export default function DashboardPage() {
   const { unreadCount } = useAlerts();
+  const { accessToken, loading: authLoading } = useAuth();
   const [reports, setReports] = useState<ReportItem[]>([]);
   const [invoices, setInvoices] = useState<InvoiceItem[]>([]);
   const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>([]);
@@ -29,6 +32,13 @@ export default function DashboardPage() {
   type ScheduleApi = ScheduleItem;
 
   useEffect(() => {
+    if (authLoading) return;
+    if (!accessToken && !isDemoMode) {
+      setReports([]);
+      setInvoices([]);
+      setScheduleItems([]);
+      return;
+    }
     const isNotFound = (error: unknown) => (error as ApiError | undefined)?.status === 404;
 
     const loadReports = async () => {
@@ -41,7 +51,8 @@ export default function DashboardPage() {
             category: report.category,
             priority: report.priority,
             status: report.status,
-            createdISO: report.createdAt
+            createdISO: report.createdAt,
+            createdBy: report.createdBy
           })) ?? [];
         setReports(mapped);
       } catch (error) {
@@ -82,7 +93,7 @@ export default function DashboardPage() {
     loadReports();
     loadInvoices();
     loadSchedule();
-  }, []);
+  }, [accessToken, authLoading, isDemoMode]);
 
   const dueInvoice = useMemo(() => invoices.find((i) => i.status !== "Paid"), [invoices]);
 
@@ -139,7 +150,8 @@ export default function DashboardPage() {
                 {reports.slice(0, 4).map((r) => (
                   <div key={r.id} className="flex items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4">
                     <div className="min-w-0">
-                      <div className="font-extrabold truncate">{r.title}</div>
+                      <AuthorMeta author={r.createdBy} createdISO={r.createdISO} />
+                      <div className="mt-2 font-extrabold truncate">{r.title}</div>
                       <div className="mt-1 flex flex-wrap items-center gap-2 text-sm text-slate-500">
                         <Badge tone="slate">{r.category}</Badge>
                         <Badge tone={r.priority === "High" ? "red" : r.priority === "Medium" ? "amber" : "blue"}>{r.priority}</Badge>

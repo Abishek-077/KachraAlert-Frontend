@@ -16,10 +16,15 @@ body {
 
 body {
   @apply bg-slate-50 text-slate-900 antialiased;
+  font-family: var(--font-inter), "Segoe UI", sans-serif;
 }
 
 .dark body {
   @apply bg-slate-950 text-slate-50;
+}
+
+html[lang="ne"] body {
+  font-family: var(--font-nepali), var(--font-inter), "Nirmala UI", sans-serif;
 }
 
 /* Background effect */
@@ -67,4 +72,65 @@ body {
 
 .dark ::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.40);
+}
+
+/* Dashboard dark-mode fallback for legacy light utility classes */
+.dark .dashboard-theme .bg-white {
+  background-color: rgb(15 23 42);
+}
+
+.dark .dashboard-theme .bg-slate-50 {
+  background-color: rgb(15 23 42);
+}
+
+.dark .dashboard-theme .bg-white\/80 {
+  background-color: rgb(15 23 42 / 0.8);
+}
+
+.dark .dashboard-theme .bg-white\/70 {
+  background-color: rgb(15 23 42 / 0.7);
+}
+
+.dark .dashboard-theme .border-slate-200,
+.dark .dashboard-theme .border-slate-100 {
+  border-color: rgb(51 65 85);
+}
+
+.dark .dashboard-theme .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgb(51 65 85);
+}
+
+.dark .dashboard-theme .text-slate-900 {
+  color: rgb(241 245 249);
+}
+
+.dark .dashboard-theme .text-slate-800,
+.dark .dashboard-theme .text-slate-700 {
+  color: rgb(226 232 240);
+}
+
+.dark .dashboard-theme .text-slate-600 {
+  color: rgb(203 213 225);
+}
+
+.dark .dashboard-theme .text-slate-500 {
+  color: rgb(148 163 184);
+}
+
+.dark .dashboard-theme .hover\:bg-slate-50:hover,
+.dark .dashboard-theme .hover\:bg-slate-100:hover {
+  background-color: rgb(30 41 59);
+}
+
+.dark .dashboard-theme .bg-emerald-50 {
+  background-color: rgb(6 78 59 / 0.28);
+}
+
+.dark .dashboard-theme .border-emerald-100 {
+  border-color: rgb(6 95 70 / 0.5);
+}
+
+.dark .dashboard-theme .text-emerald-700,
+.dark .dashboard-theme .text-emerald-800 {
+  color: rgb(110 231 183);
 }
