@@ -63,7 +63,7 @@ export default function Sidebar() {
   return (
     <aside
       className={cn(
-        "sticky top-0 h-screen border-r border-slate-200 bg-white px-3 py-5 transition-all duration-200 dark:border-slate-800 dark:bg-slate-950",
+        "sticky top-0 h-screen border-r border-slate-200 bg-white px-3 py-5 dark:border-slate-800 dark:bg-slate-950",
         collapsed ? "w-[88px]" : "w-[270px]",
       )}
     >
@@ -109,7 +109,7 @@ export default function Sidebar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition",
+                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors duration-150",
                 collapsed ? "justify-center" : "justify-start",
                 active
                   ? "bg-emerald-500 text-white shadow-sm"
@@ -139,7 +139,7 @@ export default function Sidebar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition",
+                    "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors duration-150",
                     collapsed ? "justify-center" : "justify-start",
                     active
                       ? "bg-emerald-500 text-white shadow-sm"
@@ -161,7 +161,7 @@ export default function Sidebar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition",
+                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors duration-150",
                 collapsed ? "justify-center" : "justify-start",
                 active
                   ? "bg-emerald-500 text-white shadow-sm"
