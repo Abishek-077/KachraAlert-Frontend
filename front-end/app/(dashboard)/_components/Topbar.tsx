@@ -36,7 +36,7 @@ export default function Topbar() {
   };
 
   return (
-    <div className="sticky top-0 z-10 border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
+    <div className="motion-swipe-track sticky top-0 z-10 border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-6 py-3">
         <div className="hidden flex-1 md:block">
           <div className="relative">
@@ -58,7 +58,7 @@ export default function Topbar() {
 
           {open ? (
             <div
-              className="absolute right-0 mt-2 w-64 rounded-2xl border border-slate-200 bg-white p-2 shadow-lg dark:border-slate-800 dark:bg-slate-900"
+              className="motion-card absolute right-0 mt-2 w-64 rounded-2xl border border-slate-200 bg-white p-2 shadow-lg dark:border-slate-800 dark:bg-slate-900"
               onMouseLeave={() => setOpen(false)}
             >
               {actualRole === "admin" ? (
@@ -117,7 +117,7 @@ export default function Topbar() {
           <button
             type="button"
             onClick={() => setTheme(isDark ? "light" : "dark")}
-            className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+            className="motion-button rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
             aria-label="Toggle theme"
           >
             {isDark ? <Moon size={18} /> : <Sun size={18} />}
@@ -125,14 +125,14 @@ export default function Topbar() {
         ) : null}
 
         <button
-          className="relative rounded-xl border border-slate-200 bg-white px-3 py-2 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+          className="motion-button relative rounded-xl border border-slate-200 bg-white px-3 py-2 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
           aria-label="Messages"
           onClick={() => router.push("/messages")}
         >
           <MessageSquare size={18} />
         </button>
         <button
-          className="relative rounded-xl border border-slate-200 bg-white px-3 py-2 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+          className="motion-button relative rounded-xl border border-slate-200 bg-white px-3 py-2 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
           aria-label="Notifications"
           onClick={() => router.push("/alerts")}
         >
@@ -140,7 +140,7 @@ export default function Topbar() {
           <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-red-500" />
         </button>
         <button
-          className="rounded-xl border border-slate-200 bg-white px-3 py-2 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+          className="motion-button rounded-xl border border-slate-200 bg-white px-3 py-2 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
           aria-label="Profile"
           onClick={() => router.push("/settings")}
         >
