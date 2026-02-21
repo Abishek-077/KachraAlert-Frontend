@@ -18,7 +18,7 @@ KachraAlert helps residents and administrators manage garbage collection schedul
   - User profile and settings
 - Admin user management screens (list, create, edit, detail)
 - Dark mode support and polished Tailwind-based UI
-- Typed API layer with token refresh and standardized error handling
+- Typed API layer with token refresh and standardized error handling kattu alert 
 
 ---
 
