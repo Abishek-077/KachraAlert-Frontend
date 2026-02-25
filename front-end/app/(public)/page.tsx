@@ -28,23 +28,23 @@ const pulseBars = [28, 36, 26, 54, 48, 88, 82, 104];
 
 export default function PublicHomePage() {
     return (
-        <div className="pt-16 animate-fade-in">
+        <div className="pt-14">
             {/* Hero */}
-            <section className="mx-auto max-w-4xl text-center animate-slide-up">
-                <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-brand-200/50 bg-brand-50/80 px-4 py-2 text-sm font-medium text-brand-700 backdrop-blur-sm dark:border-brand-800/50 dark:bg-brand-900/50 dark:text-brand-300">
+            <section className="mx-auto max-w-[980px] text-center">
+                <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-brand-50/85 px-5 py-2.5 text-[1.05rem] font-medium text-brand-700 backdrop-blur-sm dark:border-brand-800/50 dark:bg-brand-900/50 dark:text-brand-300">
                     <Sparkles size={16} className="animate-pulse-slow" />
                     Smart Waste Management Solution
                 </div>
 
-                <h1 className="mt-8 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl leading-tight">
+                <h1 className="mt-9 text-[3.7rem] font-extrabold leading-[0.96] tracking-[-0.03em] text-slate-900 dark:text-white sm:text-[4.4rem] lg:text-[5.3rem]">
                     Never Miss Your{" "}
-                    <span className="bg-gradient-to-r from-brand-500 to-brand-700 bg-clip-text text-transparent">
-                        Garbage Collection
-                    </span>{" "}
+                    <span className="bg-gradient-to-r from-brand-500 to-brand-700 bg-clip-text text-transparent">Garbage</span>
+                    <br />
+                    <span className="bg-gradient-to-r from-brand-500 to-brand-700 bg-clip-text text-transparent">Collection</span>{" "}
                     Again
                 </h1>
 
-                <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 sm:text-xl">
+                <p className="mx-auto mt-8 max-w-[780px] text-[1.08rem] leading-[1.48] text-slate-600 dark:text-slate-300 sm:text-[1.18rem]">
                     KacharaAlert is your smart companion for efficient waste management.
                     Get timely alerts, manage schedules, and contribute to a cleaner environment.
                 </p>
@@ -52,14 +52,14 @@ export default function PublicHomePage() {
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                     <Link
                         href="/register"
-                        className="group w-full rounded-xl bg-brand-500 px-8 py-4 text-center text-base font-semibold text-white shadow-soft transition-all hover:bg-brand-600 hover:shadow-glow hover:scale-105 sm:w-auto"
+                        className="group w-full rounded-[0.95rem] bg-brand-500 px-9 py-4 text-center text-[1.05rem] font-semibold text-white shadow-[0_10px_24px_rgba(16,185,129,0.25)] transition-colors hover:bg-brand-600 sm:w-auto"
                     >
                         Sign Up Free
                         <ArrowRight className="ml-2 inline-block h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                     <Link
                         href="/about"
-                        className="w-full rounded-xl border-2 border-slate-200 bg-white/80 px-8 py-4 text-center text-base font-semibold text-slate-700 shadow-sm backdrop-blur-sm transition-all hover:bg-slate-50 hover:border-brand-300 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:border-brand-600 sm:w-auto"
+                        className="w-full rounded-[0.95rem] border-2 border-slate-200 bg-white/[0.84] px-8 py-4 text-center text-[1.05rem] font-semibold text-slate-700 shadow-[0_6px_16px_rgba(15,23,42,0.08)] backdrop-blur-sm transition-colors hover:bg-slate-50 hover:border-brand-300 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:border-brand-600 sm:w-auto"
                     >
                         Learn More
                     </Link>
