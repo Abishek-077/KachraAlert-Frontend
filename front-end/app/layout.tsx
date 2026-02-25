@@ -1,9 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_Devanagari } from "next/font/google";
+import { Manrope, Noto_Sans_Devanagari } from "next/font/google";
 import Providers from "./providers";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-inter" });
 const notoSansDevanagari = Noto_Sans_Devanagari({
   subsets: ["devanagari"],
   variable: "--font-nepali"
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
-      <body className={`${inter.className} ${inter.variable} ${notoSansDevanagari.variable}`}>
+      <body className={`${manrope.className} ${manrope.variable} ${notoSansDevanagari.variable}`}>
         <Providers>{children}</Providers>
       </body>
     </html>
