@@ -35,15 +35,15 @@ export default function LoginForm() {
     }
 
     return (
-        <div className="w-full max-w-md animate-scale-in">
-            <div className="rounded-3xl border border-slate-200/50 bg-white/90 p-10 shadow-soft backdrop-blur-xl dark:border-slate-800/50 dark:bg-slate-950/90">
+        <div className="w-full max-w-[430px]">
+            <div className="rounded-[1.7rem] border border-slate-200/80 bg-white/[0.88] p-9 shadow-[0_20px_36px_rgba(15,23,42,0.07)] backdrop-blur-xl dark:border-slate-800/50 dark:bg-slate-950/90">
                 {/* Logo */}
                 <div className="text-center">
-                    <div className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 text-white shadow-soft">
-                        <Leaf size={22} />
+                    <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-[0.95rem] bg-gradient-to-br from-brand-500 to-brand-600 text-white shadow-[0_8px_20px_rgba(16,185,129,0.26)]">
+                        <Leaf size={20} />
                     </div>
-                    <h1 className="mt-5 text-3xl font-bold text-slate-900 dark:text-white">Welcome Back</h1>
-                    <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">Sign in to your KacharaAlert account</p>
+                    <h1 className="mt-5 text-[2.55rem] font-extrabold tracking-tight text-slate-900 dark:text-white">Welcome Back</h1>
+                    <p className="mt-1.5 text-[1rem] text-slate-500 dark:text-slate-400">Sign in to your KacharaAlert account</p>
                     {message && (
                         <p className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700 dark:border-red-900/40 dark:bg-red-900/20 dark:text-red-200">
                             {message}
@@ -51,12 +51,12 @@ export default function LoginForm() {
                     )}
                 </div>
 
-                <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
+                <form className="mt-8 space-y-5" onSubmit={handleSubmit(onSubmit)}>
                     {/* Email */}
                     <div>
-                        <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">Email Address</label>
+                        <label className="mb-2 block text-[0.97rem] font-semibold text-slate-700 dark:text-slate-300">Email Address</label>
                         <input
-                            className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm outline-none transition-all placeholder:text-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-brand-500"
+                            className="w-full rounded-[0.95rem] border border-slate-200 bg-slate-50/80 px-4 py-3.5 text-[1rem] outline-none transition-all placeholder:text-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-brand-500"
                             placeholder="you@example.com"
                             autoComplete="email"
                             {...register("email")}
@@ -68,10 +68,10 @@ export default function LoginForm() {
 
                     {/* Password */}
                     <div>
-                        <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">Password</label>
+                        <label className="mb-2 block text-[0.97rem] font-semibold text-slate-700 dark:text-slate-300">Password</label>
                         <div className="relative">
                             <input
-                                className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 pr-12 text-sm outline-none transition-all placeholder:text-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-brand-500"
+                                className="w-full rounded-[0.95rem] border border-slate-200 bg-slate-50/80 px-4 py-3.5 pr-12 text-[1rem] outline-none transition-all placeholder:text-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-brand-500"
                                 placeholder="Enter your password"
                                 type={show ? "text" : "password"}
                                 autoComplete="current-password"
@@ -93,7 +93,7 @@ export default function LoginForm() {
 
                     {/* Remember + Forgot */}
                     <div className="flex items-center justify-between">
-                        <label className="flex cursor-pointer items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+                        <label className="flex cursor-pointer items-center gap-2 text-[0.98rem] text-slate-600 dark:text-slate-300">
                             <input
                                 type="checkbox"
                                 className="h-4 w-4 cursor-pointer rounded border-slate-300 text-brand-600 focus:ring-2 focus:ring-brand-500 dark:border-slate-600"
@@ -104,7 +104,7 @@ export default function LoginForm() {
 
                         <Link
                             href="/forgot-password"
-                            className="text-sm font-semibold text-brand-600 transition-colors hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300"
+                            className="text-[0.98rem] font-semibold text-brand-600 transition-colors hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300"
                         >
                             Forgot Password?
                         </Link>
@@ -114,13 +114,13 @@ export default function LoginForm() {
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full rounded-xl bg-brand-500 py-3.5 text-sm font-semibold text-white shadow-soft transition-all hover:bg-brand-600 hover:shadow-glow hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
+                        className="w-full rounded-[0.95rem] bg-brand-500 py-3.5 text-[1.02rem] font-semibold text-white shadow-[0_10px_24px_rgba(16,185,129,0.24)] transition-colors hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-70"
                     >
                         {isSubmitting ? "Signing In..." : "Sign In"}
                     </button>
 
                     {/* Divider */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2.5">
                         <div className="h-px flex-1 bg-slate-200 dark:bg-slate-800" />
                         <span className="text-xs font-medium text-slate-500 dark:text-slate-400">Or continue with</span>
                         <div className="h-px flex-1 bg-slate-200 dark:bg-slate-800" />
@@ -130,21 +130,21 @@ export default function LoginForm() {
                     <div className="grid grid-cols-2 gap-3">
                         <button
                             type="button"
-                            className="rounded-xl border border-slate-200 bg-white py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:scale-105 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+                            className="rounded-[0.85rem] border border-slate-200 bg-white py-3 text-[1rem] font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
                             onClick={() => setMessage("Google login is not enabled yet")}
                         >
                             Google
                         </button>
                         <button
                             type="button"
-                            className="rounded-xl border border-slate-200 bg-white py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:scale-105 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+                            className="rounded-[0.85rem] border border-slate-200 bg-white py-3 text-[1rem] font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
                             onClick={() => setMessage("Facebook login is not enabled yet")}
                         >
                             Facebook
                         </button>
                     </div>
 
-                    <p className="text-center text-sm text-slate-600 dark:text-slate-300">
+                    <p className="text-center text-[1rem] text-slate-600 dark:text-slate-300">
                         Don&apos;t have an account?{" "}
                         <Link href="/register" className="font-semibold text-brand-600 transition-colors hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300">
                             Sign Up

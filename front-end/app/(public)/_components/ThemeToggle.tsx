@@ -17,10 +17,10 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm transition-all hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+      className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-[1rem] font-semibold text-slate-600 shadow-[0_4px_10px_rgba(15,23,42,0.06)] transition-colors hover:bg-slate-50 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-white"
       aria-label="Toggle theme"
     >
-      {isDark ? <Moon size={18} /> : <Sun size={18} />}
+      {isDark ? <Moon size={16} /> : <Sun size={16} />}
       <span className="hidden sm:inline">{isDark ? "Dark" : "Light"}</span>
     </button>
   );

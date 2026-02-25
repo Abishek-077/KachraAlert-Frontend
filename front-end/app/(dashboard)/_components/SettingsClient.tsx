@@ -230,7 +230,7 @@ export default function SettingsClient() {
     tab === "rating" ? "Rate your pickup and waste management service" : "Update your profile details";
 
   return (
-    <div className="grid gap-4 lg:grid-cols-3">
+    <div className="grid gap-4 lg:grid-cols-3 motion-reveal-target">
       <Card className="lg:col-span-1">
         <CardHeader title="Settings" subtitle="Customize your experience" />
         <CardBody>

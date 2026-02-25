@@ -11,7 +11,13 @@ export default function Card({
   className?: string;
 }) {
   return (
-    <div className={cn("rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900", className)}>
+    <div
+      data-motion-reveal="true"
+      className={cn(
+        "motion-card motion-swipe-track rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900",
+        className,
+      )}
+    >
       {children}
     </div>
   );

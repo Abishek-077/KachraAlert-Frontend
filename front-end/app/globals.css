@@ -29,15 +29,81 @@ html[lang="ne"] body {
 
 /* Background effect */
 .kachra-bg {
+  position: relative;
+  isolation: isolate;
+  background-color: rgb(245 248 252);
+}
+
+.kachra-bg::before,
+.kachra-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.kachra-bg::before {
+  z-index: 0;
   background:
-    radial-gradient(1200px 500px at 50% 0%, rgba(16, 185, 129, 0.10), transparent 60%),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.02), transparent 35%);
+    radial-gradient(1200px 430px at 50% -160px, rgba(190, 224, 221, 0.62) 0%, rgba(225, 238, 242, 0.56) 48%, rgba(245, 248, 252, 0) 79%),
+    radial-gradient(760px 760px at -180px 170px, rgba(61, 214, 180, 0.78) 0%, rgba(148, 227, 210, 0.56) 45%, rgba(199, 237, 229, 0.35) 62%, rgba(245, 248, 252, 0) 81%),
+    radial-gradient(780px 780px at calc(100% + 170px) 575px, rgba(80, 218, 197, 0.72) 0%, rgba(153, 230, 217, 0.54) 44%, rgba(198, 237, 230, 0.34) 61%, rgba(245, 248, 252, 0) 80%);
+}
+
+.kachra-bg::after {
+  z-index: 1;
+  background:
+    radial-gradient(circle at 200px 160px, rgba(52, 211, 181, 0.34) 0 11px, rgba(52, 211, 181, 0.22) 12px 26px, rgba(52, 211, 181, 0) 31px),
+    radial-gradient(circle at calc(100% - 330px) 455px, rgba(52, 211, 181, 0.34) 0 11px, rgba(52, 211, 181, 0.22) 12px 26px, rgba(52, 211, 181, 0) 31px),
+    radial-gradient(circle at 52% calc(100% - 120px), rgba(52, 211, 181, 0.30) 0 9px, rgba(52, 211, 181, 0.18) 10px 23px, rgba(52, 211, 181, 0) 29px);
 }
 
 .dark .kachra-bg {
+  background-color: rgb(2 6 23);
+}
+
+.dark .kachra-bg::before {
   background:
-    radial-gradient(1200px 500px at 50% 0%, rgba(16, 185, 129, 0.08), transparent 60%),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.10), transparent 35%);
+    radial-gradient(1200px 430px at 50% -160px, rgba(15, 118, 110, 0.22) 0%, rgba(15, 23, 42, 0.58) 48%, rgba(2, 6, 23, 0) 79%),
+    radial-gradient(760px 760px at -180px 170px, rgba(16, 185, 129, 0.30) 0%, rgba(30, 41, 59, 0.39) 45%, rgba(2, 6, 23, 0) 81%),
+    radial-gradient(780px 780px at calc(100% + 170px) 575px, rgba(20, 184, 166, 0.33) 0%, rgba(30, 41, 59, 0.36) 44%, rgba(2, 6, 23, 0) 80%);
+}
+
+.dark .kachra-bg::after {
+  background:
+    radial-gradient(circle at 200px 160px, rgba(45, 212, 191, 0.16) 0 11px, rgba(45, 212, 191, 0.12) 12px 26px, rgba(45, 212, 191, 0) 31px),
+    radial-gradient(circle at calc(100% - 330px) 455px, rgba(45, 212, 191, 0.16) 0 11px, rgba(45, 212, 191, 0.12) 12px 26px, rgba(45, 212, 191, 0) 31px),
+    radial-gradient(circle at 52% calc(100% - 120px), rgba(45, 212, 191, 0.14) 0 9px, rgba(45, 212, 191, 0.1) 10px 23px, rgba(45, 212, 191, 0) 29px);
+}
+
+@media (max-width: 900px) {
+  .kachra-bg::before {
+    background:
+      radial-gradient(930px 330px at 50% -110px, rgba(190, 224, 221, 0.52) 0%, rgba(225, 238, 242, 0.48) 49%, rgba(245, 248, 252, 0) 80%),
+      radial-gradient(520px 520px at -170px 150px, rgba(61, 214, 180, 0.62) 0%, rgba(148, 227, 210, 0.45) 45%, rgba(245, 248, 252, 0) 81%),
+      radial-gradient(560px 560px at calc(100% + 150px) 500px, rgba(80, 218, 197, 0.58) 0%, rgba(153, 230, 217, 0.42) 44%, rgba(245, 248, 252, 0) 80%);
+  }
+
+  .kachra-bg::after {
+    background:
+      radial-gradient(circle at 18% 145px, rgba(52, 211, 181, 0.26) 0 9px, rgba(52, 211, 181, 0.16) 10px 21px, rgba(52, 211, 181, 0) 27px),
+      radial-gradient(circle at calc(100% - 120px) 380px, rgba(52, 211, 181, 0.26) 0 9px, rgba(52, 211, 181, 0.16) 10px 21px, rgba(52, 211, 181, 0) 27px),
+      radial-gradient(circle at 50% calc(100% - 90px), rgba(52, 211, 181, 0.24) 0 8px, rgba(52, 211, 181, 0.15) 9px 20px, rgba(52, 211, 181, 0) 26px);
+  }
+
+  .dark .kachra-bg::before {
+    background:
+      radial-gradient(930px 330px at 50% -110px, rgba(15, 118, 110, 0.2) 0%, rgba(15, 23, 42, 0.48) 49%, rgba(2, 6, 23, 0) 80%),
+      radial-gradient(520px 520px at -170px 150px, rgba(16, 185, 129, 0.24) 0%, rgba(30, 41, 59, 0.34) 45%, rgba(2, 6, 23, 0) 81%),
+      radial-gradient(560px 560px at calc(100% + 150px) 500px, rgba(20, 184, 166, 0.27) 0%, rgba(30, 41, 59, 0.32) 44%, rgba(2, 6, 23, 0) 80%);
+  }
+
+  .dark .kachra-bg::after {
+    background:
+      radial-gradient(circle at 18% 145px, rgba(45, 212, 191, 0.14) 0 9px, rgba(45, 212, 191, 0.1) 10px 21px, rgba(45, 212, 191, 0) 27px),
+      radial-gradient(circle at calc(100% - 120px) 380px, rgba(45, 212, 191, 0.14) 0 9px, rgba(45, 212, 191, 0.1) 10px 21px, rgba(45, 212, 191, 0) 27px),
+      radial-gradient(circle at 50% calc(100% - 90px), rgba(45, 212, 191, 0.12) 0 8px, rgba(45, 212, 191, 0.09) 9px 20px, rgba(45, 212, 191, 0) 26px);
+  }
 }
 
 /* Smooth transitions for theme changes */
@@ -133,4 +199,125 @@ html[lang="ne"] body {
 .dark .dashboard-theme .text-emerald-700,
 .dark .dashboard-theme .text-emerald-800 {
   color: rgb(110 231 183);
+}
+
+.motion-studio {
+  position: relative;
+  min-height: 100%;
+}
+
+.motion-route-enter {
+  position: relative;
+  z-index: 2;
+}
+
+.motion-route-enter-active {
+  animation: route-enter 260ms ease-out both;
+}
+
+.motion-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 260ms ease,
+    transform 280ms ease;
+}
+
+.motion-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.motion-card {
+  position: relative;
+  transition:
+    transform 180ms ease,
+    box-shadow 200ms ease,
+    border-color 180ms ease;
+}
+
+.motion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgb(15 23 42 / 0.1);
+}
+
+.dark .motion-card:hover {
+  box-shadow: 0 12px 24px rgb(2 6 23 / 0.45);
+}
+
+.motion-button {
+  transition:
+    transform 160ms ease,
+    box-shadow 180ms ease;
+}
+
+.motion-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgb(15 23 42 / 0.12);
+}
+
+.dark .motion-button:hover {
+  box-shadow: 0 8px 16px rgb(2 6 23 / 0.4);
+}
+
+.motion-input {
+  transition:
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.motion-input:focus,
+.motion-input:focus-visible {
+  box-shadow: 0 0 0 4px rgb(16 185 129 / 0.14);
+}
+
+.motion-nav-item {
+  transition:
+    transform 160ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.motion-nav-item:hover {
+  transform: translateY(-1px);
+}
+
+.motion-panel {
+  animation: none;
+}
+
+.motion-table {
+  animation: none;
+}
+
+.motion-swipe-track {
+  transform: none;
+  transition: none;
+}
+
+@keyframes route-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-route-enter,
+  .motion-reveal,
+  .motion-card,
+  .motion-button,
+  .motion-panel,
+  .motion-table,
+  .motion-nav-item {
+    animation: none !important;
+    transform: none !important;
+    transition-duration: 0ms !important;
+    opacity: 1 !important;
+  }
 }
