@@ -1,4 +1,4 @@
-import type { AlertItem, InvoiceItem, ReportItem, ScheduleItem } from "./types";
+import type { AlertItem, InvoiceItem, ReportItem, ScheduleItem, WeeklyPickupPoint } from "./types";
 
 export const scheduleToday: ScheduleItem[] = [
   {
@@ -95,7 +95,7 @@ export const invoices: InvoiceItem[] = [
   },
 ];
 
-export const weeklyPickups = [
+export const weeklyPickups: WeeklyPickupPoint[] = [
   { day: "Mon", count: 2 },
   { day: "Tue", count: 1 },
   { day: "Wed", count: 2 },
