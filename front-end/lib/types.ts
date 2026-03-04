@@ -49,3 +49,8 @@ export type InvoiceItem = {
   status: "Paid" | "Due" | "Overdue";
   issuedISO: string;
 };
+
+export type WeeklyPickupPoint = {
+  day: "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat" | "Sun";
+  count: number;
+};

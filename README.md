@@ -1,7 +1,7 @@
 # KachraAlert Frontend
 
 A modern **Next.js 15** frontend for smart waste-management operations.
-KachraAlert helps residents and administrators manage garbage collection schedules, receive alerts, submit reports, and track payments from a single dashboard. next js budddy
+KachraAlert helps residents and administrators manage garbage collection schedules, receive alerts, submit reports, and track payments from a single dashboard.
 
 ---
 
@@ -18,7 +18,8 @@ KachraAlert helps residents and administrators manage garbage collection schedul
   - User profile and settings
 - Admin user management screens (list, create, edit, detail)
 - Dark mode support and polished Tailwind-based UI
-- Typed API layer with token refresh and standardized error handling kattu alert 
+- Typed API layer with token refresh and standardized error handling
+
 
 ---
 
@@ -77,6 +78,13 @@ NEXT_PUBLIC_API_URL=http://localhost:5000
 NEXT_PUBLIC_ENABLE_SOCKET=false
 ```
 
+### Environment reference
+
+| Variable | Required | Default | Purpose |
+| --- | --- | --- | --- |
+| `NEXT_PUBLIC_API_URL` | Yes | `http://localhost:5000` | Base URL for backend REST APIs. |
+| `NEXT_PUBLIC_ENABLE_SOCKET` | No | `false` | Enables websocket-based alert updates when backend supports sockets. |
+
 ### 4) Run development server
 
 ```bash
@@ -95,6 +103,8 @@ Run these inside `front-end/`:
 - `npm run build` – create production build
 - `npm run start` – serve production build on port 3000
 - `npm run lint` – run Next.js/ESLint checks
+- `npm run lint:fix` – auto-fix lint issues when possible
+- `npm run typecheck` – run TypeScript type checking without emitting output
 
 ---
 
@@ -141,6 +151,14 @@ UI role resolution maps `admin_driver` and `admin` into admin-capable dashboard 
 - **Auth appears to reset:** check cookies in browser and confirm `/api/v1/auth/refresh` behavior.
 
 ---
+
+### Recommended pre-PR checks
+
+```bash
+npm run typecheck
+npm run lint
+npm run build
+```
 
 ## 🤝 Contributing
 
