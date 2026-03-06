@@ -119,31 +119,6 @@ export default function LoginForm() {
                         {isSubmitting ? "Signing In..." : "Sign In"}
                     </button>
 
-                    {/* Divider */}
-                    <div className="flex items-center gap-2.5">
-                        <div className="h-px flex-1 bg-slate-200 dark:bg-slate-800" />
-                        <span className="text-xs font-medium text-slate-500 dark:text-slate-400">Or continue with</span>
-                        <div className="h-px flex-1 bg-slate-200 dark:bg-slate-800" />
-                    </div>
-
-                    {/* Social */}
-                    <div className="grid grid-cols-2 gap-3">
-                        <button
-                            type="button"
-                            className="rounded-[0.85rem] border border-slate-200 bg-white py-3 text-[1rem] font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
-                            onClick={() => setMessage("Google login is not enabled yet")}
-                        >
-                            Google
-                        </button>
-                        <button
-                            type="button"
-                            className="rounded-[0.85rem] border border-slate-200 bg-white py-3 text-[1rem] font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
-                            onClick={() => setMessage("Facebook login is not enabled yet")}
-                        >
-                            Facebook
-                        </button>
-                    </div>
-
                     <p className="text-center text-[1rem] text-slate-600 dark:text-slate-300">
                         Don&apos;t have an account?{" "}
                         <Link href="/register" className="font-semibold text-brand-600 transition-colors hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300">
