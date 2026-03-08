@@ -1,8 +1,6 @@
-# KachraAlert Frontend
+# KachraAlert Web ♻️🚨
 
-A modern **Next.js 15** frontend for smart waste-management operations.
-KachraAlert helps residents and administrators manage garbage collection schedules, receive alerts, submit reports, and track payments from a single dashboard.
-
+### Live Demo : https://kachra-alert-web-swms.vercel.app/
 ---
 
 ## ✨ Highlights
